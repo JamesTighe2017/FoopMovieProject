@@ -1,0 +1,28 @@
+{
+  "$type": "System.Collections.Generic.List`1[[Movies_Project.Movie, Movies_Project]], mscorlib",
+  "$values": [
+    {
+      "$type": "Movies_Project.Movie",
+      "Title": "Blade Runner",
+      "Genre": "Action",
+      "Released": "1982",
+      "Director": "Ridley Scott"
+    }
+    ,
+    {
+      "$type": "Movies_Project.Movie",
+      "Director": "Mike Judge",
+      "Genre": "Comedy",
+      "Released": "1999",
+      "Title": "Office Space"
+    }
+    ,
+    {
+      "$type": "Movies_Project.Movie",
+      "Director": "Francis Ford Coppola",
+      "Genre": "Drama",
+      "Released": "1972",
+      "Title": "The Godfather"
+    }
+  ]
+}
