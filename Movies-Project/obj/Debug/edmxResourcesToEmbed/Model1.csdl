@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CinemaTbl">
+    <Key>
+      <PropertyRef Name="CinemaId" />
+    </Key>
+    <Property Name="CinemaId" Type="Int32" Nullable="false" />
+    <Property Name="CinemaAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CinemaName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="CinemaEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CinemaPhoneNum" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="MovieTbls" Relationship="Self.FK_MovieTbl_CinemaTbl" FromRole="CinemaTbl" ToRole="MovieTbl" />
+  </EntityType>
+  <EntityType Name="MovieTbl">
+    <Key>
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="MovieId" Type="Int32" Nullable="false" />
+    <Property Name="MovieTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MovieRunTime" Type="Int32" />
+    <Property Name="CinemaId" Type="Int32" />
+    <NavigationProperty Name="CinemaTbl" Relationship="Self.FK_MovieTbl_CinemaTbl" FromRole="MovieTbl" ToRole="CinemaTbl" />
+  </EntityType>
+  <Association Name="FK_MovieTbl_CinemaTbl">
+    <End Role="CinemaTbl" Type="Self.CinemaTbl" Multiplicity="0..1" />
+    <End Role="MovieTbl" Type="Self.MovieTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CinemaTbl">
+        <PropertyRef Name="CinemaId" />
+      </Principal>
+      <Dependent Role="MovieTbl">
+        <PropertyRef Name="CinemaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CinemasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CinemaTbls" EntityType="Self.CinemaTbl" />
+    <EntitySet Name="MovieTbls" EntityType="Self.MovieTbl" />
+    <AssociationSet Name="FK_MovieTbl_CinemaTbl" Association="Self.FK_MovieTbl_CinemaTbl">
+      <End Role="CinemaTbl" EntitySet="CinemaTbls" />
+      <End Role="MovieTbl" EntitySet="MovieTbls" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,41 @@
+﻿<Window x:Class="Movies_Project.CinemaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Movies_Project"
+        mc:Ignorable="d"
+        Title="CinemaWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <DataTemplate x:Key="listBoxTemplate">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="{Binding CinemaName}" Margin="5"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Name="lblCinemas" Content="Cinemas" FontSize="16" Grid.Column="0"></Label>
+        <Label Name="lblCinemaDetails" Content="Cinema Details" FontSize="16" Grid.Column="1"></Label>
+        <ListBox Name="lboxCinemas" Margin="10" ItemTemplate="{StaticResource listBoxTemplate}" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="lboxCinemas_SelectionChanged"></ListBox>
+
+        <StackPanel Name="spCinemaDetails" Grid.Row="1" Grid.Column="1" Margin="10">
+            <TextBlock Name="tblkCinemaName" Text="{Binding CinemaName}"></TextBlock>
+            <TextBlock Name="tblkCinemaAddress" Text="{Binding CinemaAddress}"></TextBlock>
+            <TextBlock Name="tblkCinemaNumber" Text="{Binding CinemaNumber}"></TextBlock>
+            <TextBlock Name="tblkCinemaEmail" Text="{Binding CinemaEmail}"></TextBlock>
+        </StackPanel>
+
+        <DataGrid Name="dgAvailableMovies" Grid.Row="2" Grid.Column="1" Margin="10"></DataGrid>
+    </Grid>
+</Window>

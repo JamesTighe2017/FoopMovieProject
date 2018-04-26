@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CinemaTbl">
+    <Key>
+      <PropertyRef Name="CinemaId" />
+    </Key>
+    <Property Name="CinemaId" Type="int" Nullable="false" />
+    <Property Name="CinemaAddress" Type="nvarchar" MaxLength="300" />
+    <Property Name="CinemaName" Type="nchar" MaxLength="100" />
+    <Property Name="CinemaEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="CinemaPhoneNum" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="MovieTbl">
+    <Key>
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="MovieId" Type="int" Nullable="false" />
+    <Property Name="MovieTitle" Type="nvarchar" MaxLength="100" />
+    <Property Name="MovieRunTime" Type="int" />
+    <Property Name="CinemaId" Type="int" />
+  </EntityType>
+  <Association Name="FK_MovieTbl_CinemaTbl">
+    <End Role="CinemaTbl" Type="Self.CinemaTbl" Multiplicity="0..1" />
+    <End Role="MovieTbl" Type="Self.MovieTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CinemaTbl">
+        <PropertyRef Name="CinemaId" />
+      </Principal>
+      <Dependent Role="MovieTbl">
+        <PropertyRef Name="CinemaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CinemasModelStoreContainer">
+    <EntitySet Name="CinemaTbl" EntityType="Self.CinemaTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovieTbl" EntityType="Self.MovieTbl" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_MovieTbl_CinemaTbl" Association="Self.FK_MovieTbl_CinemaTbl">
+      <End Role="CinemaTbl" EntitySet="CinemaTbl" />
+      <End Role="MovieTbl" EntitySet="MovieTbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

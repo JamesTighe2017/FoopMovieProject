@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CinemasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CinemaTbl">
+          <Key>
+            <PropertyRef Name="CinemaId" />
+          </Key>
+          <Property Name="CinemaId" Type="int" Nullable="false" />
+          <Property Name="CinemaAddress" Type="nvarchar" MaxLength="300" />
+          <Property Name="CinemaName" Type="nchar" MaxLength="100" />
+          <Property Name="CinemaEmail" Type="nvarchar" MaxLength="100" />
+          <Property Name="CinemaPhoneNum" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MovieTbl">
+          <Key>
+            <PropertyRef Name="MovieId" />
+          </Key>
+          <Property Name="MovieId" Type="int" Nullable="false" />
+          <Property Name="MovieTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="MovieRunTime" Type="int" />
+          <Property Name="CinemaId" Type="int" />
+        </EntityType>
+        <Association Name="FK_MovieTbl_CinemaTbl">
+          <End Role="CinemaTbl" Type="Self.CinemaTbl" Multiplicity="0..1" />
+          <End Role="MovieTbl" Type="Self.MovieTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CinemaTbl">
+              <PropertyRef Name="CinemaId" />
+            </Principal>
+            <Dependent Role="MovieTbl">
+              <PropertyRef Name="CinemaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CinemasModelStoreContainer">
+          <EntitySet Name="CinemaTbl" EntityType="Self.CinemaTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MovieTbl" EntityType="Self.MovieTbl" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_MovieTbl_CinemaTbl" Association="Self.FK_MovieTbl_CinemaTbl">
+            <End Role="CinemaTbl" EntitySet="CinemaTbl" />
+            <End Role="MovieTbl" EntitySet="MovieTbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CinemasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CinemaTbl">
+          <Key>
+            <PropertyRef Name="CinemaId" />
+          </Key>
+          <Property Name="CinemaId" Type="Int32" Nullable="false" />
+          <Property Name="CinemaAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CinemaName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="CinemaEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CinemaPhoneNum" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="MovieTbls" Relationship="Self.FK_MovieTbl_CinemaTbl" FromRole="CinemaTbl" ToRole="MovieTbl" />
+        </EntityType>
+        <EntityType Name="MovieTbl">
+          <Key>
+            <PropertyRef Name="MovieId" />
+          </Key>
+          <Property Name="MovieId" Type="Int32" Nullable="false" />
+          <Property Name="MovieTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MovieRunTime" Type="Int32" />
+          <Property Name="CinemaId" Type="Int32" />
+          <NavigationProperty Name="CinemaTbl" Relationship="Self.FK_MovieTbl_CinemaTbl" FromRole="MovieTbl" ToRole="CinemaTbl" />
+        </EntityType>
+        <Association Name="FK_MovieTbl_CinemaTbl">
+          <End Role="CinemaTbl" Type="Self.CinemaTbl" Multiplicity="0..1" />
+          <End Role="MovieTbl" Type="Self.MovieTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CinemaTbl">
+              <PropertyRef Name="CinemaId" />
+            </Principal>
+            <Dependent Role="MovieTbl">
+              <PropertyRef Name="CinemaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CinemasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CinemaTbls" EntityType="Self.CinemaTbl" />
+          <EntitySet Name="MovieTbls" EntityType="Self.MovieTbl" />
+          <AssociationSet Name="FK_MovieTbl_CinemaTbl" Association="Self.FK_MovieTbl_CinemaTbl">
+            <End Role="CinemaTbl" EntitySet="CinemaTbls" />
+            <End Role="MovieTbl" EntitySet="MovieTbls" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CinemasModelStoreContainer" CdmEntityContainer="CinemasEntities">
+          <EntitySetMapping Name="CinemaTbls">
+            <EntityTypeMapping TypeName="CinemasModel.CinemaTbl">
+              <MappingFragment StoreEntitySet="CinemaTbl">
+                <ScalarProperty Name="CinemaId" ColumnName="CinemaId" />
+                <ScalarProperty Name="CinemaAddress" ColumnName="CinemaAddress" />
+                <ScalarProperty Name="CinemaName" ColumnName="CinemaName" />
+                <ScalarProperty Name="CinemaEmail" ColumnName="CinemaEmail" />
+                <ScalarProperty Name="CinemaPhoneNum" ColumnName="CinemaPhoneNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovieTbls">
+            <EntityTypeMapping TypeName="CinemasModel.MovieTbl">
+              <MappingFragment StoreEntitySet="MovieTbl">
+                <ScalarProperty Name="MovieId" ColumnName="MovieId" />
+                <ScalarProperty Name="MovieTitle" ColumnName="MovieTitle" />
+                <ScalarProperty Name="MovieRunTime" ColumnName="MovieRunTime" />
+                <ScalarProperty Name="CinemaId" ColumnName="CinemaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

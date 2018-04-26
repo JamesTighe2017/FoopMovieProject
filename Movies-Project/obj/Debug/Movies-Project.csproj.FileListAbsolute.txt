@@ -1,0 +1,60 @@
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\bin\Debug\Movies-Project.exe.config
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\bin\Debug\Movies-Project.exe
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\bin\Debug\Movies-Project.pdb
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\Movies-Project.csprojResolveAssemblyReference.cache
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\MainWindow.g.cs
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\App.g.cs
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\Movies-Project_MarkupCompile.cache
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\Movies-Project_MarkupCompile.lref
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\MainWindow.baml
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\Movies-Project.g.resources
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\Movies_Project.Properties.Resources.resources
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\Movies-Project.csproj.GenerateResource.Cache
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\Movies-Project.exe
+H:\Year 2\Semester 2\FOOP 2\Project\Movies-Project\Movies-Project\obj\Debug\Movies-Project.pdb
+E:\Movie Project\Movies-Project\bin\Debug\Movies-Project.exe.config
+E:\Movie Project\Movies-Project\bin\Debug\Movies-Project.exe
+E:\Movie Project\Movies-Project\bin\Debug\Movies-Project.pdb
+E:\Movie Project\Movies-Project\obj\Debug\Movies-Project.csprojResolveAssemblyReference.cache
+E:\Movie Project\Movies-Project\obj\Debug\CinemaWindow.g.cs
+E:\Movie Project\Movies-Project\obj\Debug\MainWindow.g.cs
+E:\Movie Project\Movies-Project\obj\Debug\App.g.cs
+E:\Movie Project\Movies-Project\obj\Debug\Movies-Project_MarkupCompile.cache
+E:\Movie Project\Movies-Project\obj\Debug\Movies-Project_MarkupCompile.lref
+E:\Movie Project\Movies-Project\obj\Debug\MainWindow.baml
+E:\Movie Project\Movies-Project\obj\Debug\CinemaWindow.baml
+E:\Movie Project\Movies-Project\obj\Debug\Movies-Project.g.resources
+E:\Movie Project\Movies-Project\obj\Debug\Movies_Project.Properties.Resources.resources
+E:\Movie Project\Movies-Project\obj\Debug\Movies-Project.csproj.GenerateResource.cache
+E:\Movie Project\Movies-Project\obj\Debug\Movies-Project.exe
+E:\Movie Project\Movies-Project\obj\Debug\Movies-Project.pdb
+E:\Movie Project\Movies-Project\bin\Debug\Newtonsoft.Json.dll
+E:\Movie Project\Movies-Project\bin\Debug\Newtonsoft.Json.xml
+\\Client\E$\Movie Project\Movies-Project\bin\Debug\Movies-Project.exe.config
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\Movies-Project.exe
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\Movies-Project.pdb
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\Movies-Project.csprojResolveAssemblyReference.cache
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\CinemaWindow.g.cs
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\MainWindow.g.cs
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\App.g.cs
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\Movies-Project_MarkupCompile.cache
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\Movies-Project_MarkupCompile.lref
+\\Client\E$\Movie Project\Movies-Project\bin\Debug\Movies-Project.exe
+\\Client\E$\Movie Project\Movies-Project\bin\Debug\Movies-Project.pdb
+\\Client\E$\Movie Project\Movies-Project\bin\Debug\Newtonsoft.Json.dll
+\\Client\E$\Movie Project\Movies-Project\bin\Debug\Newtonsoft.Json.xml
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\CinemaWindow.baml
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\MainWindow.baml
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\Movies-Project.g.resources
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\Movies_Project.Properties.Resources.resources
+\\Client\E$\Movie Project\Movies-Project\obj\Debug\Movies-Project.csproj.GenerateResource.Cache
+J:\Movie Project\Movies-Project\bin\Debug\Movies-Project.exe.config
+J:\Movie Project\Movies-Project\obj\Debug\Movies-Project.exe
+J:\Movie Project\Movies-Project\obj\Debug\Movies-Project.pdb
+E:\Movie Project\Movies-Project\bin\Debug\Cinemas.mdf
+E:\Movie Project\Movies-Project\bin\Debug\Cinemas_log.ldf
+E:\Movie Project\Movies-Project\bin\Debug\EntityFramework.dll
+E:\Movie Project\Movies-Project\bin\Debug\EntityFramework.SqlServer.dll
+E:\Movie Project\Movies-Project\bin\Debug\EntityFramework.xml
+E:\Movie Project\Movies-Project\bin\Debug\EntityFramework.SqlServer.xml
+E:\Movie Project\Movies-Project\obj\Debug\Movies-Project_Content.g.cs

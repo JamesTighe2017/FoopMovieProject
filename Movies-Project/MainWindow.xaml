@@ -1,0 +1,35 @@
+﻿<Window x:Class="Movies_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Movies_Project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Movies" FontSize="16"></Label>
+        <Label Content="Details" FontSize="16" Grid.Column="2"></Label>
+        <ComboBox Grid.Row="1" Height="30" Width="120" Name="cboxDirectors"></ComboBox>
+        <ComboBox Grid.Row="1" Grid.Column="1" Height="30" Width="120" Name="cboxGenres"></ComboBox>
+        <ListBox Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Width="220" Name="lboxMovies" SelectionChanged="lboxMovies_SelectionChanged"></ListBox>
+        <TextBox Grid.Row="3" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="2" Width="220" Name="tboxDetails" TextWrapping="Wrap"></TextBox>
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding DisplayPoster}"></TextBlock>
+        <Image Source="{Binding Movie.Poster}" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Stretch="Fill" Width="131.25"/>
+        <Button Grid.Row="4" Grid.Column="3" Content="Save" Height="25" Width="100" Name="btnSave"></Button>
+        <Button Grid.Row="4" Grid.Column="0" Content="View Cinemas" Height="25" Width="100" Name="btnCinemas" Click="Cinema_Button_Click"></Button>
+    </Grid>
+</Window>

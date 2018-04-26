@@ -1,0 +1,34 @@
+{
+  "$type": "System.Collections.Generic.List`1[[Movies_Project.Movie, Movies_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "$values": [
+    {
+      "$type": "Movies_Project.Movie",
+      "Title": "Blade Runner",
+      "Genre": "Action",
+      "Released": "1982",
+      "Director": "Ridley Scott",
+      "Poster": ".\bladerunner.jpg",
+      "Description": "test description for blade runner"
+    }
+    ,
+    {
+      "$type": "Movies_Project.Movie",
+      "Title": "Office Space",
+      "Genre": "Comedy",
+      "Released": "1999",
+      "Director": "Mike Judge",
+      "Poster": "",
+      "Description": "test description for office space"
+    }
+    ,
+    {
+      "$type": "Movies_Project.Movie",
+      "Title": "The Godfather",      
+      "Genre": "Drama",
+      "Released": "1972",
+      "Director": "Francis Ford Coppola",
+      "Poster": "",
+      "Description": "test description for godfather"
+    }
+  ]
+}

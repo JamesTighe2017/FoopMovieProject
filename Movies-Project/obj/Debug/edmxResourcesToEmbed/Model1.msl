@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CinemasModelStoreContainer" CdmEntityContainer="CinemasEntities">
+    <EntitySetMapping Name="CinemaTbls">
+      <EntityTypeMapping TypeName="CinemasModel.CinemaTbl">
+        <MappingFragment StoreEntitySet="CinemaTbl">
+          <ScalarProperty Name="CinemaId" ColumnName="CinemaId" />
+          <ScalarProperty Name="CinemaAddress" ColumnName="CinemaAddress" />
+          <ScalarProperty Name="CinemaName" ColumnName="CinemaName" />
+          <ScalarProperty Name="CinemaEmail" ColumnName="CinemaEmail" />
+          <ScalarProperty Name="CinemaPhoneNum" ColumnName="CinemaPhoneNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovieTbls">
+      <EntityTypeMapping TypeName="CinemasModel.MovieTbl">
+        <MappingFragment StoreEntitySet="MovieTbl">
+          <ScalarProperty Name="MovieId" ColumnName="MovieId" />
+          <ScalarProperty Name="MovieTitle" ColumnName="MovieTitle" />
+          <ScalarProperty Name="MovieRunTime" ColumnName="MovieRunTime" />
+          <ScalarProperty Name="CinemaId" ColumnName="CinemaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
