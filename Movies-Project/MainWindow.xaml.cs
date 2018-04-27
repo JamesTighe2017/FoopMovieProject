@@ -60,8 +60,33 @@ namespace Movies_Project
             string selectedMovieYear = selectedMovie.Released.ToString();
             string selectedMovieDescription = selectedMovie.Description.ToString();
 
-            tboxDetails.Text = ($"Title: {selectedMovieTitle} \nDirector: {selectedMovieDirector} \nGenre: {selectedMovieGenre} \nYear Released: {selectedMovieYear} \nDescription: {selectedMovieDescription}");   
+            tboxDetails.Text = ($"Title: {selectedMovieTitle} \nDirector: {selectedMovieDirector} \nGenre: {selectedMovieGenre} \nYear Released: {selectedMovieYear} \nDescription: {selectedMovieDescription}");
+
+            try
+            {
+                string selectedMoviePoster = selectedMovie.Poster.ToString();
+                imgPoster.Source = new BitmapImage(new Uri(GetImageDirectory() + selectedMoviePoster, UriKind.Absolute));
+            }
+
+            catch (FileNotFoundException fnfe)
+            {
+                MessageBox.Show(string.Format("Error: {0}\nSource: {1}\n{2}", fnfe.Message, fnfe.Source, fnfe.StackTrace));
+            }
         }
         
+        private string GetImageDirectory()
+        {
+            string currentDir = Directory.GetCurrentDirectory();
+            DirectoryInfo parent = Directory.GetParent(currentDir);
+            DirectoryInfo grandParent = Directory.GetParent(parent.FullName);
+            string imageDirectory = grandParent + "\\images\\";
+
+            return imageDirectory;
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

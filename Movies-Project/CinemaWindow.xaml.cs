@@ -122,5 +122,9 @@ namespace Movies_Project
 
             dgAvailableMovies.ItemsSource = query.ToList();
         }
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -5,13 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Movies_Project"
         mc:Ignorable="d"
-        Title="CinemaWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="CinemaWindow" Height="450" Width="800" Loaded="Window_Loaded" Background="DarkCyan">
     <Window.Resources>
         <DataTemplate x:Key="listBoxTemplate">
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="{Binding CinemaName}" Margin="5"></TextBlock>
             </StackPanel>
         </DataTemplate>
+        <Style x:Key="lboxStyle1" TargetType="ListBox">
+            <Setter Property="Background" Value="CadetBlue"></Setter>
+            <Setter Property="Foreground" Value="Ivory"></Setter>
+        </Style>
+        <Style x:Key="tblkStyle1" TargetType="TextBlock">
+            <Setter Property="Background" Value="CadetBlue"></Setter>
+            <Setter Property="Foreground" Value="Ivory"></Setter>
+        </Style>
+        <Style x:Key="lblStyle1" TargetType="Label">
+            <Setter Property="Foreground" Value="Ivory"></Setter>
+        </Style>
+        <Style x:Key="btnStyle1" TargetType="Button">
+            <Setter Property="Background" Value="#FF067474"></Setter>
+            <Setter Property="Foreground" Value="Ivory"></Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -19,23 +34,25 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="1"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Name="lblCinemas" Content="Cinemas" FontSize="16" Grid.Column="0"></Label>
-        <Label Name="lblCinemaDetails" Content="Cinema Details" FontSize="16" Grid.Column="1"></Label>
-        <ListBox Name="lboxCinemas" Margin="10" ItemTemplate="{StaticResource listBoxTemplate}" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="lboxCinemas_SelectionChanged"></ListBox>
+        <Label Style="{StaticResource lblStyle1}" Name="lblCinemas" Content="Cinemas" FontSize="16" Grid.Column="0"></Label>
+        <Label Style="{StaticResource lblStyle1}" Name="lblCinemaDetails" Content="Cinema Details" FontSize="16" Grid.Column="1"></Label>
+        <ListBox Style="{StaticResource lboxStyle1}" Name="lboxCinemas" Margin="10" ItemTemplate="{StaticResource listBoxTemplate}" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="lboxCinemas_SelectionChanged"></ListBox>
 
         <StackPanel Name="spCinemaDetails" Grid.Row="1" Grid.Column="1" Margin="10">
-            <TextBlock Name="tblkCinemaName" Text="{Binding CinemaName}"></TextBlock>
-            <TextBlock Name="tblkCinemaAddress" Text="{Binding CinemaAddress}"></TextBlock>
-            <TextBlock Name="tblkCinemaNumber" Text="{Binding CinemaNumber}"></TextBlock>
-            <TextBlock Name="tblkCinemaEmail" Text="{Binding CinemaEmail}"></TextBlock>
+            <TextBlock Style="{StaticResource tblkStyle1}" Name="tblkCinemaName" Text="{Binding CinemaName}"></TextBlock>
+            <TextBlock Style="{StaticResource tblkStyle1}" Name="tblkCinemaAddress" Text="{Binding CinemaAddress}"></TextBlock>
+            <TextBlock Style="{StaticResource tblkStyle1}" Name="tblkCinemaNumber" Text="{Binding CinemaNumber}"></TextBlock>
+            <TextBlock Style="{StaticResource tblkStyle1}" Name="tblkCinemaEmail" Text="{Binding CinemaEmail}"></TextBlock>
         </StackPanel>
 
         <DataGrid Name="dgAvailableMovies" Grid.Row="2" Grid.Column="1" Margin="10"></DataGrid>
+        <Button Style="{StaticResource btnStyle1}" Grid.Row="3" Grid.Column="2" Content="Exit" Height="25" Width="100" Name="btnExit" Click="btnExit_Click" HorizontalAlignment="Right" Margin="0,0,10,10"></Button>
     </Grid>
 </Window>

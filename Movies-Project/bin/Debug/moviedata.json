@@ -7,7 +7,7 @@
       "Genre": "Action",
       "Released": "1982",
       "Director": "Ridley Scott",
-      "Poster": ".\bladerunner.jpg",
+      "Poster": "bladerunner.jpg",
       "Description": "test description for blade runner"
     }
     ,
@@ -17,18 +17,28 @@
       "Genre": "Comedy",
       "Released": "1999",
       "Director": "Mike Judge",
-      "Poster": "",
+      "Poster": "officespace.jpg",
       "Description": "test description for office space"
     }
     ,
     {
       "$type": "Movies_Project.Movie",
-      "Title": "The Godfather",      
+      "Title": "The Godfather",
       "Genre": "Drama",
       "Released": "1972",
       "Director": "Francis Ford Coppola",
-      "Poster": "",
+      "Poster": "godfather.jpg",
       "Description": "test description for godfather"
+    }
+    ,
+    {
+      "$type": "Movies_Project.Movie",
+      "Title": "Exception Test",      
+      "Genre": "N/A",
+      "Released": "Never",
+      "Director": "James Tighe",
+      "Poster": "nothing.jpg",
+      "Description": "test description for exception test"
     }
   ]
 }

@@ -5,7 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Movies_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="525" Loaded="Window_Loaded">
+        Title="MainWindow" Height="400" Width="525" Loaded="Window_Loaded" Background="DarkCyan">
+
+    <Window.Resources>
+        <Style x:Key="lboxStyle1" TargetType="ListBox">
+            <Setter Property="Background" Value="CadetBlue"></Setter>
+            <Setter Property="Foreground" Value="Ivory"></Setter>
+        </Style>
+        <Style x:Key="tboxStyle1" TargetType="TextBox">
+            <Setter Property="Background" Value="CadetBlue"></Setter>
+            <Setter Property="Foreground" Value="Ivory"></Setter>
+        </Style>
+        <Style x:Key="lblStyle1" TargetType="Label">
+            <Setter Property="Foreground" Value="Ivory"></Setter>
+        </Style>
+        <Style x:Key="cboxStyle1" TargetType="ComboBox">
+            <Setter Property="Background" Value="Cyan"></Setter>
+            <Setter Property="Foreground" Value="Ivory"></Setter>
+        </Style>
+        <Style x:Key="btnStyle1" TargetType="Button">
+            <Setter Property="Background" Value="#FF067474"></Setter>
+            <Setter Property="Foreground" Value="Ivory"></Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
@@ -21,15 +44,13 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Movies" FontSize="16"></Label>
-        <Label Content="Details" FontSize="16" Grid.Column="2"></Label>
-        <ComboBox Grid.Row="1" Height="30" Width="120" Name="cboxDirectors"></ComboBox>
-        <ComboBox Grid.Row="1" Grid.Column="1" Height="30" Width="120" Name="cboxGenres"></ComboBox>
-        <ListBox Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Width="220" Name="lboxMovies" SelectionChanged="lboxMovies_SelectionChanged"></ListBox>
-        <TextBox Grid.Row="3" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="2" Width="220" Name="tboxDetails" TextWrapping="Wrap"></TextBox>
+        <Label Style="{StaticResource lblStyle1}" Content="Movies" FontSize="16"></Label>
+        <Label Style="{StaticResource lblStyle1}" Content="Details" FontSize="16" Grid.Column="2"></Label>
+        <ListBox Style="{StaticResource lboxStyle1}" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Width="220" Name="lboxMovies" SelectionChanged="lboxMovies_SelectionChanged"></ListBox>
+        <TextBox Style="{StaticResource tboxStyle1}" Grid.Row="3" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="2" Width="220" Name="tboxDetails" TextWrapping="Wrap"></TextBox>
         <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding DisplayPoster}"></TextBlock>
-        <Image Source="{Binding Movie.Poster}" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Stretch="Fill" Width="131.25"/>
-        <Button Grid.Row="4" Grid.Column="3" Content="Save" Height="25" Width="100" Name="btnSave"></Button>
-        <Button Grid.Row="4" Grid.Column="0" Content="View Cinemas" Height="25" Width="100" Name="btnCinemas" Click="Cinema_Button_Click"></Button>
+        <Image x:Name="imgPoster" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2" Stretch="Fill" Width="117" Margin="6,0,0,3" />
+        <Button Style="{StaticResource btnStyle1}" Grid.Row="4" Grid.Column="3" Content="Exit" Height="25" Width="100" Name="btnExit" Click="btnExit_Click"></Button>
+        <Button Style="{StaticResource btnStyle1}" Grid.Row="4" Grid.Column="0" Content="View Cinemas" Height="25" Width="100" Name="btnCinemas" Click="Cinema_Button_Click"></Button>
     </Grid>
 </Window>
